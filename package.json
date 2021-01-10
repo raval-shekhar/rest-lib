@@ -1,13 +1,18 @@
 {
   "name": "@shekhar.raval/rest-lib",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Rest Api Library for Node Project Microservices",
-  "main": "src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "dev": "nodemon",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "pub": "npm version patch && npm run build && npm publish"
   },
   "keywords": [
     "typescript",

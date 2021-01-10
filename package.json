@@ -1,0 +1,45 @@
+{
+  "name": "rest-lib",
+  "version": "1.0.0",
+  "description": "Rest Api Library for Node Project Microservices",
+  "main": "index.ts",
+  "request-log": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "ts-node -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon",
+    "tsc": "tsc"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs",
+    "express",
+    "logger",
+    "microservice",
+    "rest-server",
+    "error-handling"
+  ],
+  "author": "RAVAL SHEKHAR",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.3.1",
+    "joi": "^17.3.0",
+    "pino": "^6.10.0",
+    "pino-http": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/node": "^14.14.20",
+    "@types/pino": "^6.3.5",
+    "@types/pino-http": "^5.0.6",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7",
+    "pino-pretty": "^4.3.0",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.3"
+  }
+}

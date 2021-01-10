@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InternalServerError = void 0;
-const http_status_1 = require("src/utils/http-status");
+const http_status_1 = require("../utils/http-status");
 const CustomError_1 = require("./CustomError");
 class InternalServerError extends CustomError_1.CustomError {
     constructor(message) {

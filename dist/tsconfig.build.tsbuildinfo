@@ -457,8 +457,8 @@
         "affectsGlobalScope": false
       },
       "../src/error/NotFound.ts": {
-        "version": "51fac15fb9bb59d131c7f621e17005969198685659471c6d72a44688b6b37c44",
-        "signature": "879f351d37a0fe1f60c5827dce98db54b3b3cc3fa89ae9565e177ddd05d80946",
+        "version": "17a3edb42578e173ddd4bd9ad316b40b51402df5605ce1efe0aa245661700b00",
+        "signature": "02ec82fae6b671a8f113359557f1519739c1db27f54c31b717735784b33b844c",
         "affectsGlobalScope": false
       },
       "../src/middleware/error.ts": {
@@ -582,8 +582,8 @@
         "affectsGlobalScope": false
       },
       "../src/error/BadRequest.ts": {
-        "version": "e3b1730d468b69b5594cd2bccb6a7a56b38486851b52c3d0222bf7dbf9313a49",
-        "signature": "7a22ed5b4cc60b2ddb80dec88b701af1be9c56cae6e54b4c62f4dcba22573f27",
+        "version": "33239d2da6be6d5247044e39ad0470ecd19ae0f27fc3d7e0d9793c195f09db60",
+        "signature": "5dd6268a575500fbfe6d279e7e2b3038d918e7f6db1094b822cb549f0a7ac5a1",
         "affectsGlobalScope": false
       },
       "../node_modules/joi/lib/index.d.ts": {
@@ -592,18 +592,18 @@
         "affectsGlobalScope": false
       },
       "../src/error/ValidationError.ts": {
-        "version": "3d540d284cc7d6cfeba361d675c3d7ced07a5e797f44059dd5bf6905f265fbd9",
-        "signature": "1ab89b06e07249d4ee4a9ae6eb24b66bcc8af7f13aa8a4544a74441282c575cb",
+        "version": "2a0dacfc0247b108b2afde2bceff4011af135261285447ec63fed1a34f302f90",
+        "signature": "1f2c34df3f1c1e04bf7ae9922673ad64cb2b03cbe1452e15d89319e4ed1e2e01",
         "affectsGlobalScope": false
       },
       "../src/error/DatabaseError.ts": {
-        "version": "7dcdfafece191e7c96275ae61583e341073e7c9b09f5d366f32a07b9773976fb",
-        "signature": "7297880f02112f5cf89e93cf9898aa156a282b76e48ff46e5311addf30f29604",
+        "version": "15faece4ff1295ea436a1c70e96b926a60f46e42b20fc7e111a2833e47b0d9e0",
+        "signature": "8d044d0abf8cc2adc27312c2d73b31f38b10362c668b738e6295f5e08bffc24b",
         "affectsGlobalScope": false
       },
       "../src/error/InternalServerError.ts": {
-        "version": "d0afc09356c0cfa3d9999e5f5bcbe8c902bee33e0ae72c255e1e6282d4222efe",
-        "signature": "9b9d4024f82d3063a738102a6e0a1b281fd16d76ac28b8a28291111cde68ec3e",
+        "version": "5b244ab1dee9ed38b25b7af4ea47e76d2d5b57c3dd86260c0ac7554a3e66be72",
+        "signature": "f09c0c55530664d442a8e413d8e51c7fd4e030d33dadedf2111a177d886030f6",
         "affectsGlobalScope": false
       },
       "../src/utils/pick.ts": {
@@ -622,8 +622,8 @@
         "affectsGlobalScope": false
       },
       "../src/error/NotAuthorized.ts": {
-        "version": "5167a0473a4b5d65755c0bff3bfa76fad052e9494bb29ca5d45d29e4a48d1800",
-        "signature": "fa21acfc6aac5a8c99b3ad84280821264042e2b0a3ba3a220f231a5f49be9818",
+        "version": "de3e4656d5d9bad2d6dc1839c662329f5e590cacffb5e5320d47450cea2fd63b",
+        "signature": "c09347665b957d17d2e75a495d59150dd1358384f455d7a023b0be69ebfd5621",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/json5/index.d.ts": {

@@ -1,9 +1,8 @@
 {
-  "name": "rest-lib",
-  "version": "1.0.0",
+  "name": "@shekhar.raval/rest-lib",
+  "version": "1.0.1",
   "description": "Rest Api Library for Node Project Microservices",
-  "main": "index.ts",
-  "request-log": true,
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
@@ -20,7 +19,10 @@
     "error-handling"
   ],
   "author": "RAVAL SHEKHAR",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "https://github.com/raval-shekhar/rest-lib.git#readme",
+  "url" : "https://github.com/raval-shekhar/rest-lib.git", 
+  "email" : "raval.shekhar@outlook.com",
   "dependencies": {
     "compression": "^1.7.4",
     "cors": "^2.8.5",

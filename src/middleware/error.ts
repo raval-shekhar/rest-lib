@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { ApiError } from "src/error/ApiError";
-import { NotFound } from "src/error/NotFound";
+import { ApiError } from "../error/ApiError";
+import { NotFound } from "../error/NotFound";
 import { CustomError } from "../error/CustomError";
 import { HttpStatus } from "../utils/http-status";
 
@@ -11,7 +11,7 @@ export const ErrorHandler = (err: Error, req: Request, res: Response, next: Next
   return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: 'Something went wrong' });
 };
 
-export const ErrorConverter = (err, req: Request, res: Response, next: NextFunction) => {
+export const ErrorConverter = (err: any, req: Request, res: Response, next: NextFunction) => {
   let error = err;
   if (!(error instanceof CustomError)) {
     const statusCode = error.statusCode || HttpStatus.INTERNAL_SERVER_ERROR;

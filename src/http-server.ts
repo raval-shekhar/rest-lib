@@ -23,7 +23,7 @@ export const BootstrapServer = (
   router: RouterOptions,
   securityOptions?: SecurityPolicy): Promise<void> => {
   const app = new Application();
-  if(typeof process.env.APP_NAME === 'undefined' && typeof process.env.NODE_ENV === 'undefined') {
+  if (typeof process.env.APP_NAME === 'undefined' && typeof process.env.NODE_ENV === 'undefined') {
     throw Error('Please specify NODE_ENV and APP_NAME in environment');
   }
   const logger = new Logger('SERVER');
@@ -36,10 +36,10 @@ export const BootstrapServer = (
   server.listen(port);
   return new Promise((resolve, reject) => {
     server.on('listening', () => {
-      logger.debug(`${process.env.NODE_ENV.toUpperCase()} server is listening to ${port}`);
+      logger.debug(`${process.env.NODE_ENV?.toUpperCase()} server is listening to ${port}`);
       resolve();
     });
-    const onError = (error) => {
+    const onError = (error: Error | any) => {
       if (error.syscall !== 'listen') {
         throw error;
       }
@@ -56,6 +56,6 @@ export const BootstrapServer = (
           throw error;
       }
     };
-    server.on('error',onError);
+    server.on('error', onError);
   });
 };

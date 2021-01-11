@@ -22,7 +22,7 @@ const Pino = (filename: string, prettyPrint: boolean): pino.Logger => {
     } : false,
     enabled: true,
     formatters: {
-      level: (level, number) => {
+      level: (level: string, number: number) => {
         return { level: level, number };
       },
     }

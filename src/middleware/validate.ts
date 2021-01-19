@@ -4,7 +4,7 @@ import Joi from 'joi';
 import { ValidationError } from '../error/ValidationError';
 import Pick from '../utils/pick';
 
-interface ValidationSchema {
+export interface ValidationSchema {
   body?: Record<any, any>;
   query?: Record<any, any>;
   params?: Record<any, any>;

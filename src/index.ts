@@ -8,17 +8,14 @@ export * from './error/InternalServerError';
 export * from './error/NotAuthorized'
 export * from './error/ConflictError';
 
+// Route Mapper
+export * from './utils/routes';
+
 // Logger Exports
 export * from './logger/logger';
-
-// Middleware Exports
-export * from './middleware/validate';
 
 // HttpStatus Codes
 export * from './utils/http-status';
 
 // Http-Server
 export * from './http-server';
-
-// Route Mapper
-export * from './utils/routes';

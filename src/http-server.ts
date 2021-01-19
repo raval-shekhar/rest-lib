@@ -52,7 +52,7 @@ export const BootstrapServer = (
      * Listen to server event
      */
     server.on('listening', () => {
-      logger.debug(`${process.env.NODE_ENV?.toUpperCase()} server is listening to ${port}`);
+      logger.debug(`${process.env.APP_NAME || 'REST-SERVER'} server is listening to ${port}`);
       resolve();
     });
     /**

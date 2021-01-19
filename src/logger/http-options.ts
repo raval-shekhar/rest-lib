@@ -3,8 +3,8 @@ import pino from 'pino';
 
 import PinoLogger from './config';
 
-export const RequestLogger = (preetyPrint: boolean) => PinoRequest({
-  logger: PinoLogger('HTTP', preetyPrint),
+export const RequestLogger = () => PinoRequest({
+  logger: PinoLogger('HTTP'),
 
   // Define custom serializers
   serializers: {

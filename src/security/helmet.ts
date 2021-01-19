@@ -3,8 +3,7 @@ import helmet from 'helmet';
 import { SecurityPolicy } from "./helmet-options";
 
 export const Helmet = (securityOptions?: SecurityPolicy) => {
-  const directives= {
-    defaultSrc: ["'self'", "'localhost:8000'"],
+  const directives = {
     scriptSrc: ["'self'", "'unsafe-inline'"],
     sandbox: ['allow-forms', 'allow-scripts'],
     reportUri: '/report-violation',

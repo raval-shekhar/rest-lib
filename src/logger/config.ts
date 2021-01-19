@@ -1,10 +1,10 @@
 import pino from 'pino';
 import os from 'os';
 
-const Pino = (filename: string, prettyPrint: boolean): pino.Logger => {
+const Pino = (filename: string): pino.Logger => {
   return pino({
-    level: process.env.LEVEL,
-    name: process.env.APP_NAME,
+    level: process.env.LEVEL || 'debug',
+    name: process.env.APP_NAME || 'rest-server',
     messageKey: 'message',
     base: {
       pid: process.pid,
@@ -12,14 +12,14 @@ const Pino = (filename: string, prettyPrint: boolean): pino.Logger => {
       filename: filename,
       app: process.env.APP_NAME
     },
-    prettifier: prettyPrint,
-    prettyPrint: prettyPrint ? {
+    prettifier: true,
+    prettyPrint: {
       colorize: true,
       translateTime: 'yyyy-mm-dd HH:MM:ss.l',
       crlf: true,
       ignore: 'pid,filename,app,message',
       messageFormat: '[{filename}] - {message}'
-    } : false,
+    },
     enabled: true,
     formatters: {
       level: (level: string, number: number) => {

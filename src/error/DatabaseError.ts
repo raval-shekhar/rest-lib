@@ -5,7 +5,7 @@ export class DatabaseError extends CustomError {
   statusCode: number = HttpStatus.INTERNAL_SERVER_ERROR;
   constructor(message?: string) {
     super(message || 'Error Connecting Database')
-    Object.setPrototypeOf(this, DatabaseError);
+    Object.setPrototypeOf(this, DatabaseError.prototype);
   }
 
   serializeError(): ErrorSerializer {
@@ -13,5 +13,4 @@ export class DatabaseError extends CustomError {
       message: this.message || 'Error Connecting Database'
     }
   }
-
 }

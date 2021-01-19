@@ -7,7 +7,7 @@ import Pick from '../utils/pick';
 interface ValidationSchema {
   body?: Record<any, any>;
   query?: Record<any, any>;
-  params: Record<any, any>;
+  params?: Record<any, any>;
 }
 export const Validate = (schema: ValidationSchema) => (req: Request, res: Response, next: NextFunction) => {
   const validSchema = Pick(schema, ['params', 'query', 'body']);

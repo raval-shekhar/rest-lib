@@ -1,9 +1,7 @@
 import http from 'http';
 
 import Application from './rest-server';
-import { SecurityPolicy } from "./security/helmet-options";
 import { Logger } from "./logger/logger";
-import { CorsSecurityOptions } from "./security/cors";
 import { ApiRouter } from "./utils/routes";
 
 const logger = new Logger('SERVER');
@@ -20,11 +18,7 @@ interface RouterOptions {
  * @param {CorsSecurityOptions} cors - Cors Security Options
  * @param {SecurityPolicy} securityOptions - Helmet Security Options
  */
-export const BootstrapServer = (
-  port: number,
-  router: RouterOptions,
-  corsOptions: CorsSecurityOptions,
-  securityOptions?: SecurityPolicy): Promise<void> => {
+export const BootstrapServer = (port: number, router: RouterOptions): Promise<void> => {
   const app = new Application();
 
   const server = http.createServer(app.express);
@@ -33,8 +27,6 @@ export const BootstrapServer = (
    * Set Application middleware
    */
   app.requestLogger();
-  app.setHelmet(securityOptions);
-  app.setCors(corsOptions);
   app.setRoute(router.prefix, router.router);
   app.catchErrors();
 

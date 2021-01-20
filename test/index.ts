@@ -8,13 +8,4 @@ const baseRoutes: ApiRouter[] = [
     router: AuthRoutes
   }
 ]
-BootstrapServer(8000,
-  { prefix: '/api', router: baseRoutes },
-  {
-    allowedHeaders: [],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    whitelist: ['*']
-  }
-).then(() => {
-
-});
+BootstrapServer(8000, { prefix: '/api', router: baseRoutes }).then(() => { });

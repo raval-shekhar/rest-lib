@@ -1,11 +1,10 @@
-import express, { Application, Router } from 'express';
+import express, { Application } from 'express';
 import Compression from 'compression';
+import cors from 'cors';
+import helmet from 'helmet';
 
 import { ErrorConverter, ErrorHandler, RouteNotFound } from './middleware/error';
-import { Helmet } from './security/helmet';
-import { SecurityPolicy } from './security/helmet-options';
 import { RequestLogger } from './logger/http-options';
-import { Cors, CorsSecurityOptions } from './security/cors';
 import { ApiRouter, MapRoutes } from './utils/routes';
 
 /**
@@ -25,28 +24,16 @@ export class RestServer {
 	private setMiddleware(): void {
 		this.express.use(express.json())
 		this.express.use(Compression());
+		this.express.use(cors());
+		this.express.use(helmet())
 	}
 	/**
 	 * Prints Coloured log in development and json in production
-	 * @param {boolean} preetyPrint - print log in preety mode
 	 */
 	public requestLogger(): void {
 		this.express.use(RequestLogger())
 	}
-	/**
-	 * Helmet Setup
-	 * @param {SecurityPolicy} helmetOptions - Helmet Security options
-	 */
-	public setHelmet(securityOptions?: SecurityPolicy): void {
-		this.express.use(Helmet(securityOptions))
-	}
-	/**
-	 * Cors Setup
-	 * @param {CorsSecurityOptions} corsOptions - Cors Security options
-	 */
-	public setCors(corsOptions: CorsSecurityOptions): void {
-		this.express.use(Cors(corsOptions));
-	}
+
 	/**
 	 * Setup Express Routing
 	 * @param {string} prefix - Route prefix

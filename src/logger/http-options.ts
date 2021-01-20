@@ -16,9 +16,9 @@ export const RequestLogger = () => PinoRequest({
   // Log level as per status code
   customLogLevel: function (res, err) {
     if (res.statusCode >= 400 && res.statusCode < 500) {
-      return 'warn'
-    } else if (res.statusCode >= 500 || err) {
       return 'error'
+    } else if (res.statusCode >= 500 || err) {
+      return 'warn'
     }
     return 'info'
   },

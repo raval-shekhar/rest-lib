@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import { ErrorConverter, ErrorHandler, RouteNotFound } from './middleware/error';
 import { RequestLogger } from './logger/http-options';
 import { ApiRouter, MapRoutes } from './utils/routes';
+import { ResponseHandler } from './success/Response';
 
 /**
  * Create Rest server instance
@@ -25,7 +26,8 @@ export class RestServer {
 		this.express.use(express.json())
 		this.express.use(Compression());
 		this.express.use(cors());
-		this.express.use(helmet())
+		this.express.use(helmet());
+		this.express.use(ResponseHandler.success());
 	}
 	/**
 	 * Prints Coloured log in development and json in production

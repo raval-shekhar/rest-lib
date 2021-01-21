@@ -19,4 +19,5 @@ export enum HttpStatus {
   TOO_MANY_REQUESTS = 429,
   UNAUTHORIZED = 401,
   UNPROCESSABLE_ENTITY = 422,
+  NO_CONTENT = 204,
 };

@@ -3,7 +3,7 @@ import Joi from 'joi';
 import { ApiRouter, MapRoutes, Methods } from 'src';
 
 const loginController = async (req: Request, res: Response): Promise<any> => {
-  return res.send('Ok')
+  return res.success204()
 }
 
 const authRoutes: ApiRouter[] = [

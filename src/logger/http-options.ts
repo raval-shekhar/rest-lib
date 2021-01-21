@@ -3,14 +3,29 @@ import pino from 'pino';
 
 import PinoLogger from './config';
 
+
 export const RequestLogger = () => PinoRequest({
   logger: PinoLogger('HTTP'),
 
   // Define custom serializers
   serializers: {
     err: pino.stdSerializers.err,
-    req: pino.stdSerializers.req,
-    res: pino.stdSerializers.res
+    req: (req) => {
+      let ipAddress;
+      const forwardedIpsStr = req.headers['x-forwarded-for'];
+      if (forwardedIpsStr) {
+        const forwardedIps = forwardedIpsStr.split(',');
+        ipAddress = forwardedIps[0];
+      }
+      if (!ipAddress) {
+        ipAddress = req.remoteAddress;
+      }
+      const { method, url, headers: { host } } = req;
+      return { method, host, url, ip: ipAddress }
+    },
+    res: (res) => {
+      return { status: res.statusCode }
+    }
   },
 
   // Log level as per status code

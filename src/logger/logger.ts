@@ -3,7 +3,7 @@ import logger from './config';
 export class Logger {
   logger: any;
   constructor(filename: string) {
-    this.logger = logger(filename);
+    this.logger = logger(filename.toUpperCase());
   }
 
   /**

@@ -1,4 +1,4 @@
-import { HttpStatus } from "src/utils/http-status";
+import { HttpStatus } from '../utils/http-status';
 import { SuccessResponse } from "./SuccessResponse";
 
 export class NoContentSuccess extends SuccessResponse {

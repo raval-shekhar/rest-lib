@@ -1,6 +1,6 @@
-import { Router, Request, Response } from "express";
-import { Validate, ValidationSchema } from "../middleware/validate";
-import { CatchAsync } from "./asyncCatch";
+import { Router, Request, Response } from 'express';
+import { Validate, ValidationSchema } from '../middleware/validate';
+import { CatchAsync } from './asyncCatch';
 
 export enum Methods {
   GET = 'get',

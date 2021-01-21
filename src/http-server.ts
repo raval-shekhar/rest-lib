@@ -1,8 +1,8 @@
 import http from 'http';
 
 import Application from './rest-server';
-import { Logger } from "./logger/logger";
-import { ApiRouter } from "./utils/routes";
+import { Logger } from './logger/logger';
+import { ApiRouter } from './utils/routes';
 
 const logger = new Logger('SERVER');
 interface RouterOptions {

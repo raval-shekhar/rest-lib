@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 
-import { CreatedSuccess } from "./CreatedSuccess";
-import { NoContentSuccess } from "./NoContentSuccess";
-import { OkSuccess } from "./OkSuccess";
+import { CreatedSuccess } from './CreatedSuccess';
+import { NoContentSuccess } from './NoContentSuccess';
+import { OkSuccess } from './OkSuccess';
 
 declare global {
   namespace Express {

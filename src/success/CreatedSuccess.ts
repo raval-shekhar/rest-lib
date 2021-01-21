@@ -1,5 +1,5 @@
-import { HttpStatus } from "src/utils/http-status";
-import { SuccessResponse } from "./SuccessResponse";
+import { HttpStatus } from '../utils/http-status';
+import { SuccessResponse } from './SuccessResponse';
 
 export class CreatedSuccess extends SuccessResponse {
   constructor(data: any) {

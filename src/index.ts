@@ -11,9 +11,6 @@ export * from './error/ConflictError';
 // Route Mapper
 export * from './utils/routes';
 
-// Logger Exports
-export * from './logger/logger';
-
 // HttpStatus Codes
 export * from './utils/http-status';
 

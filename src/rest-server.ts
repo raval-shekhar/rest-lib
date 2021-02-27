@@ -2,11 +2,11 @@ import express, { Application } from 'express';
 import Compression from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
+import { ExpressLogger } from '@shekhar.raval/logger';
 
 import { ErrorConverter, ErrorHandler, RouteNotFound } from './middleware/error';
-import { RequestLogger } from './logger/http-options';
+
 import { ApiRouter, MapRoutes } from './utils/routes';
-import { ResponseHandler } from './success/Response';
 
 /**
  * Create Rest server instance
@@ -27,13 +27,12 @@ export class RestServer {
 		this.express.use(Compression());
 		this.express.use(cors());
 		this.express.use(helmet());
-		this.express.use(ResponseHandler.success());
 	}
 	/**
 	 * Prints Coloured log in development and json in production
 	 */
 	public requestLogger(): void {
-		this.express.use(RequestLogger())
+		this.express.use(ExpressLogger())
 	}
 
 	/**

@@ -1,7 +1,7 @@
 import http from 'http';
+import { Logger } from '@shekhar.raval/logger';
 
 import Application from './rest-server';
-import { Logger } from './logger/logger';
 import { ApiRouter } from './utils/routes';
 
 const logger = new Logger('SERVER');
@@ -44,7 +44,7 @@ export const BootstrapServer = (port: number, router: RouterOptions): Promise<vo
      * Listen to server event
      */
     server.on('listening', () => {
-      logger.debug(`${process.env.APP_NAME || 'REST-SERVER'} server is listening to ${port}`);
+      logger.debug(`${'REST'} server is listening to ${port}`);
       resolve();
     });
     /**

@@ -44,7 +44,7 @@ export const BootstrapServer = (port: number, router: RouterOptions): Promise<vo
      * Listen to server event
      */
     server.on('listening', () => {
-      logger.debug(`${'REST'} server is listening to ${port}`);
+      logger.info(`${'REST'} server is listening to ${port}`);
       resolve();
     });
     /**

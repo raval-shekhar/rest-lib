@@ -2,7 +2,7 @@ import express, { Application } from 'express';
 import Compression from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
-import { ExpressLogger } from '@shekhar.raval/logger';
+import { ExpressLogger, CorrelationMiddleware} from '@shekhar.raval/logger';
 
 import { ErrorConverter, ErrorHandler, RouteNotFound } from './middleware/error';
 
@@ -25,6 +25,7 @@ export class RestServer {
 	private setMiddleware(): void {
 		this.express.use(express.json())
 		this.express.use(Compression());
+		this.express.use(CorrelationMiddleware());
 		this.express.use(cors());
 		this.express.use(helmet());
 	}

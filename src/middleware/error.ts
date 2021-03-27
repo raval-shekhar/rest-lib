@@ -4,11 +4,8 @@ import { NotFound } from "../error/NotFound";
 import { CustomError } from "../error/CustomError";
 import { HttpStatus } from "../utils/http-status";
 
-export const ErrorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
-  if (err instanceof CustomError) {
-    return res.status(err.statusCode).json(err.serializeError());
-  }
-  return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: 'Something went wrong' });
+export const ErrorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
+  return res.status(err.statusCode).json(err.serializeError());
 };
 
 export const ErrorConverter = (err: any, req: Request, res: Response, next: NextFunction) => {

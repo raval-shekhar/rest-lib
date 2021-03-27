@@ -5,17 +5,19 @@ import { CustomError } from "../error/CustomError";
 import { HttpStatus } from "../utils/http-status";
 
 export const ErrorHandler = (err: any, req: Request, res: Response, next: NextFunction) => {
-  return res.status(err.statusCode).json(err.serializeError());
+  if (err instanceof CustomError) {
+    return res.status(err.statusCode).json(err.serializeError());
+  }
+  return res.status(err.statusCode).json({ message: err.message });
 };
 
 export const ErrorConverter = (err: any, req: Request, res: Response, next: NextFunction) => {
-  let error = err;
+  let error: Record<any, any> = {};
   if (!(error instanceof CustomError)) {
-    const statusCode = error.statusCode || HttpStatus.INTERNAL_SERVER_ERROR;
-    const message = error.message || 'Something went Wrong';
-    error = new ApiError(statusCode, message);
+    error.statusCode = err.statusCode || HttpStatus.INTERNAL_SERVER_ERROR;
+    error.message = err.message || 'Something went Wrong';
   }
-  next(error);
+  return ErrorHandler(error, req, res, next);
 };
 
 export const RouteNotFound = (req: Request, res: Response, next: NextFunction) => {

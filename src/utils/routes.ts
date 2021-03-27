@@ -16,7 +16,7 @@ export interface ApiRouter {
   path: string;
   middlewares?: any[];
   router?: Router;
-  controller?: (req: Request, res: Response) => Promise<void>;
+  controller?: (req: Request, res: Response) => Promise<any>;
 }
 export const MapRoutes = (routes: ApiRouter[]): Router => {
   const router = Router();

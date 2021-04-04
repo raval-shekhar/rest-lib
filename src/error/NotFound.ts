@@ -9,6 +9,7 @@ export class NotFound extends CustomError {
   }
   serializeError(): ErrorSerializer {
     return {
+      statusCode: this.statusCode,
       message: this.message || 'Resource not found',
     }
   }

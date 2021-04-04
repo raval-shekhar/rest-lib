@@ -12,12 +12,13 @@ export const ErrorHandler = (err: any, req: Request, res: Response, next: NextFu
 };
 
 export const ErrorConverter = (err: any, req: Request, res: Response, next: NextFunction) => {
-  let error: Record<any, any> = {};
+  let error = err;
   if (!(error instanceof CustomError)) {
-    error.statusCode = err.statusCode || HttpStatus.INTERNAL_SERVER_ERROR;
-    error.message = err.message || 'Something went Wrong';
+    const statusCode = error.statusCode || HttpStatus.INTERNAL_SERVER_ERROR;
+    const message = error.message || 'Something went Wrong';
+    error = new ApiError(statusCode, message);
   }
-  return ErrorHandler(error, req, res, next);
+  next(error);
 };
 
 export const RouteNotFound = (req: Request, res: Response, next: NextFunction) => {

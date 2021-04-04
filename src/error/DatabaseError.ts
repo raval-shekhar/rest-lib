@@ -10,6 +10,7 @@ export class DatabaseError extends CustomError {
 
   serializeError(): ErrorSerializer {
     return {
+      statusCode: this.statusCode,
       message: this.message || 'Error Connecting Database'
     }
   }

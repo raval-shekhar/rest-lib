@@ -48,8 +48,8 @@ export class RestServer {
 	 * Error Handlers
 	 */
 	public catchErrors(): void {
-		this.express.use(RouteNotFound)
 		this.express.use(ErrorConverter);
+		this.express.use(RouteNotFound)
 		this.express.use(ErrorHandler);
 	}
 }

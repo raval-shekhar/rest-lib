@@ -9,6 +9,7 @@ export class NotAuthorized extends CustomError {
   }
   serializeError(): ErrorSerializer {
     return {
+      statusCode: this.statusCode,
       message: this.message || 'Not Authorized to access resource'
     }
   }

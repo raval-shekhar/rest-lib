@@ -15,6 +15,7 @@ export class ValidationError extends CustomError {
   }
   serializeError(): ErrorSerializer {
     return {
+      statusCode: this.statusCode,
       message: 'Validation Error',
       errors: this.errors.details.map((error: ErrorMetadata) => {
         return {

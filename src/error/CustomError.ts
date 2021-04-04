@@ -1,4 +1,5 @@
 export interface ErrorSerializer {
+  statusCode: number;
   message: string;
   errors?: any[];
 }

@@ -9,6 +9,7 @@ export class InternalServerError extends CustomError {
   }
   serializeError(): ErrorSerializer {
     return {
+      statusCode: this.statusCode,
       message: this.message || 'Internal Server Error Occured',
     }
   }

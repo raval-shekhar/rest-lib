@@ -16,3 +16,6 @@ export * from './utils/http-status';
 
 // Http-Server
 export * from './http-server';
+
+// Logger
+export * from './logger/logger';

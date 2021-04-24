@@ -1,15 +1,19 @@
 import http from 'http';
-import { Logger } from '@shekhar.raval/logger';
+import { Logger } from './logger/logger';
 
 import Application from './rest-server';
 import { ApiRouter } from './utils/routes';
 
-const logger = new Logger('SERVER');
 interface RouterOptions {
   prefix: string,
   router: ApiRouter[]
 }
 
+interface ServerOptions {
+  port: number;
+  service: string;
+  router: RouterOptions,
+}
 /**
  * Bootstrap Express Application Server
  * 
@@ -18,11 +22,14 @@ interface RouterOptions {
  * @param {CorsSecurityOptions} cors - Cors Security Options
  * @param {SecurityPolicy} securityOptions - Helmet Security Options
  */
-export const BootstrapServer = (port: number, router: RouterOptions): Promise<void> => {
+export const BootstrapServer = (options: ServerOptions): Promise<void> => {
+  const { port, service, router } = options;
+
+  process.env.APP_NAME = service;
+  const logger = new Logger('SERVER');
   const app = new Application();
-
   const server = http.createServer(app.express);
-
+  
   /**
    * Set Application middleware
    */

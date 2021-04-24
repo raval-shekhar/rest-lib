@@ -2,8 +2,8 @@ import express, { Application } from 'express';
 import Compression from 'compression';
 import cors from 'cors';
 import helmet from 'helmet';
-import { ExpressLogger, CorrelationMiddleware} from '@shekhar.raval/logger';
-
+import { CorrelationMiddleware} from './logger/correlation';
+import { ExpressLogger } from './logger/request-log';
 import { ErrorConverter, ErrorHandler, RouteNotFound } from './middleware/error';
 
 import { ApiRouter, MapRoutes } from './utils/routes';
